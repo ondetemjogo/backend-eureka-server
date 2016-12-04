@@ -1,0 +1,17 @@
+addons:
+  sonarqube: true
+language: java
+jdk:
+- oraclejdk8
+script:
+- mvn clean install
+deploy:
+  provider: heroku
+  api_key:
+    secure: evQkd+5Oqc03D2t70a6tEJ50WSVaCCRjjySZLNAwwls8CuYhhenOFF6O/6j44MFZkct7y32zVUU5tJ45kpfVb1ZmKVsYUBJXUsz6w0ySOGBK/UubNx6++rekjgBehO0O7XHkSqDTfH5GCqV1wNTbufZDSHrOjM8Kjq7S1iOGctiS7+Z9FiOwB0lsQ+rx7louNP4T4UcUt3u5spi/iJ+3n+9mY+bbqNXSQMyqWpU6SNTl8qGXaUTehtusHgi+UdfKdNmfZFfWQEeWi1PW7hvMYIwnR9gOhg9i9/FWnDW5kTMEwMTQFoFMe1fYsi6AeSOohRsdbI0ihgmnR4EOkk23xZKqRRe4baWIb1VEa/3N1/dU8bPpXW5yRQaWja9YLixaPT+GPEXlqorhFjxDS5uEZjaNqyA4bpMmI3HQRHbk2NcqCXSpN8UsHkiXqvGxIAemf1G+SaTAgCxbOQawK+UM4WWM0hVz45LFLWN5TBVoyLgrxx4hu1u8rPX5IMXKozGnm2e4q+bOT5DxTYLGNUHxLt4mwW4D9W6Kgldr15JVcwpRT7hDJ3G/joeJRV398hL3Yfz5rRH584hMqcxMBhR1vFqKeX0Kdx74pFDu1At25btcGxEzxfXhBzcoOwY14419tUPV68QZcVuR+Sq/7OokwYzsOA9aUvZ3OvsUfIdgXPs=
+  app: eureka-server-ondetemjogo
+  on:
+    repo: ondetemjogo/backend-eureka-server
+cache:
+  directories:
+  - "$HOME/.m2/repository"
